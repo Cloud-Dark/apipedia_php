@@ -218,14 +218,22 @@ $apipedia->updatePresence('628123456789', 'typing', 5000);
 
 ```php
 // Get all message statuses
-$apipedia->getMessageStatusAll('message_id_here');
+$result = $apipedia->getMessageStatusAll('message_id_here');
+echo json_encode($result->getResult());
 
 // Get last status
-$apipedia->getLastStatus('message_id_here');
+$result = $apipedia->getLastStatus('message_id_here');
+echo json_encode($result->getResult());
 
 // Get last receipt status
-$apipedia->getLastReceiptStatus('message_id_here');
+$result = $apipedia->getLastReceiptStatus('message_id_here');
+echo json_encode($result->getResult());
 ```
+
+**API Endpoints Used:**
+- Get all statuses: `GET https://waconsole.apipedia.id/api/messages/status/all`
+- Get last status: `GET https://waconsole.apipedia.id/api/status/last`
+- Get last receipt: `GET https://waconsole.apipedia.id/api/messages/status/last/receipt`
 
 ## Advanced Examples
 

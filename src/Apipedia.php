@@ -500,7 +500,7 @@ class Apipedia
         ];
 
         try {
-            $response = $this->httpClient->get("{$this->messagesBaseURL}/status/all", [
+            $response = $this->httpClient->request('GET', "{$this->messagesBaseURL}/status/all", [
                 'json' => $data,
                 'headers' => ['Content-Type' => 'application/json']
             ]);
@@ -521,7 +521,7 @@ class Apipedia
         ];
 
         try {
-            $response = $this->httpClient->get("{$this->statusBaseURL}/last", [
+            $response = $this->httpClient->request('GET', "{$this->statusBaseURL}/last", [
                 'json' => $data,
                 'headers' => ['Content-Type' => 'application/json']
             ]);
@@ -542,7 +542,7 @@ class Apipedia
         ];
 
         try {
-            $response = $this->httpClient->get("{$this->messagesBaseURL}/status/last/receipt", [
+            $response = $this->httpClient->request('GET', "{$this->messagesBaseURL}/status/last/receipt", [
                 'json' => $data,
                 'headers' => ['Content-Type' => 'application/json']
             ]);
